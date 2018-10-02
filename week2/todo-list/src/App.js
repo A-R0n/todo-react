@@ -7,7 +7,8 @@ class App extends Component {
     super();
     this.state = {
       emptyList: [],
-      textBox: ""
+      textBox: "",
+      people: []
     };
     this.eventHandler = this.eventHandler.bind(this);
     // this.displayText = this.displayText.bind(this);
@@ -28,16 +29,23 @@ class App extends Component {
     this.setState({textBox : e})
   }
 
+  // componentDidMount() {
+  //   let promise = axios.get('https://swapi.co/people/');
+  // }
+
   
 
   render() {
+const map = this.state.emptyList.map((val, i) => {
+  return <li key={i}>{val}</li>;
+});
 
     return (
       <div className="App">
       <input className="TextField" type="text" value= {this.state.textBox} onChange={(e) => this.eventHandler(e.target.value)}></input>
       <button className="ListOfItems" placeholder="click" onClick={(e) => this.displayText(this.textBox)}></button>
-      <ul>{this.state.emptyList}</ul>
-      <List eventHandler ={(e) => this.displayMoreText(this.e.target.value)}textBox={this.state.textBox}/>
+      <ul>{map}</ul>
+      <List eventHandler ={(e) => this.displayMoreText(this.e.target.value)} textBox={this.state.textBox}/>
       </div>
     );
   }
