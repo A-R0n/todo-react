@@ -1,0 +1,108 @@
+nav {
+    height: 10vh;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    color: white;
+    display: flex; 
+    background: #212529;
+    padding-top: 30px;
+    justify-content: flex-end;
+    z-index: 5;
+    
+}
+
+
+
+#title {
+    float: left;
+    margin-left: 12vw;
+    font-family: Kaushan Script;
+    font-style: italic;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+    color:  #fed136;
+}
+
+span {
+    margin-right: 20px;
+    padding-right: 10px;
+    font-size: 20px;
+    justify-content: space-between;
+    
+}
+
+span:hover, span:active {
+    box-shadow: inset 0 0 10px;
+    color: blue;
+    transform: scale(1.05);
+}
+
+.btn {
+    display: none;
+}
+
+
+@media (max-width: 985px){
+
+    span{
+      display: flex;
+      flex-direction: column;
+      background: #fed136;
+      font-family: Monstserrat;
+      width: 100px;;
+      padding: 13px;
+      border: 0;
+      position: absolute;
+      right: 0;
+      top: 25px;;
+      transition: right 300ms ease-out;
+    }
+    /* * {
+        box-sizing: border-box;
+    } */
+
+    .btn {
+        display: block;
+        background:  #fed136;
+        color: white;
+        height: 50px;
+        margin-right: 15vw;
+        font-size: 14px;
+        border-radius: 10px;
+
+    } 
+
+    span {
+        display: none;
+    }
+    button {
+        -webkit-appearance: button;
+    }
+    .show-links{
+      right: 0;
+    }
+    .menu{
+      display: block;
+      position: absolute;
+      right: 10%;
+      transition-duration: 300ms;
+      /* transition-delay: 1s; */
+      transition-property: font-size;
+      transition-timing-function: cubic-bezier(.17,.2);
+      transition: font-size 100ms ease-in;
+    }
+    .menu:hover {
+      font-size: 1.5em;
+    }
+}
+
+@keyframes entrance {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
